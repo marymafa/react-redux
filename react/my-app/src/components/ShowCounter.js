@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import IncrementCounter from './IncrementCounter';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 class ShowCounter extends Component {
-    render(){
+    render() {
         return (<div>{this.props.counter}</div>);
     }
 }
 
 const mapStateToProps = (state) => {
-    return {counter: state.incrementCounter.counter}
+    return { counter: state.incrementCounter.counter }
 }
 
 const mapDispatchToProps = dispatch => {

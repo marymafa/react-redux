@@ -1,24 +1,23 @@
-
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { increment } from '../redux/incrementCounter'
 
 class IncrementCounter extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state = {incrementCounter: 0};
+        this.state = { incrementCounter: 0 };
     }
 
-    setCounter(e){
+    setCounter(e) {
         this.setState({ incrementCounter: +e.target.value })
     }
 
     render() {
         return (
             <div>
-            <input type="number" value={this.state.incrementCounter} onChange={(e)=> this.setCounter(e)}/>
-            <button onClick={() => this.props.increment(this.state.incrementCounter)}>Increment</button>
-        </div>);
+                <input type="number" value={this.state.incrementCounter} onChange={(e) => this.setCounter(e)} />
+                <button onClick={() => this.props.increment(this.state.incrementCounter)}>Increment</button>
+            </div>);
 
 
     }
@@ -32,7 +31,7 @@ const mapdispatchtoprops = dispatch => ({
     increment: (valuetoincrement) => dispatch(increment(valuetoincrement))
 })
 
-  export default connect(
+export default connect(
     mapstatetoprops,
     mapdispatchtoprops
 )(IncrementCounter)
